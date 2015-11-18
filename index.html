@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="stocksApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body ng-controller="stocksController">
+	<div id="wrapper" class="container">
+		<div class="row">
+			<div id="left-all-stocks" class="col-md-3">
+				<form ng-submit="getStocks()">
+					<div id="get-stock-text">What stocks would you like to search for?  Separate with a comma (i.e) goog, msft, yhoo):
+
+					</div>
+					<div id="get-stock-input">
+						<input type="text" ng-model="userStocks">
+					</div>
+				</form>
+				<div ng-class-odd="'odd'" ng-class-even="'even'" id="{{stock.Symbol}}" ng-click="loadStock(stock)" ng-repeat="stock in listOfStocks">
+					<div class="company-name">{{stock.Name}}</div>
+					<div class="stock-symbol"><p>Ticker:<span> {{stock.Symbol}}<span></p></div>
+					<div class="stock-change {{getChangeClass(stock.Change)}}">{{stock.Change}}</div>
+
+				</div>
+			</div>
+			<div id="right-single-stock" class="text-center col-md-6">
+				<div class="filter-input">
+					<div id="stock-filter">
+						<span>Filter:</span><input type="text" ng-model="stockFilter">
+						<!-- Have angular create one div for each property in this stock -->
+					</div>
+					<div class="stock-filters row">
+						<div class="stock-filters-wrapper col-md-3">
+							<span >Symbol:</span>
+							<span>Bid:</span>
+							<span >Ask:</span>
+							<span>Change:</span>
+							<span >ADV:</span>
+							<span>Day Low:</span>
+							<span >Day High:</span>
+						</div>
+					
+						<div class="col-md-6" id="" ng-repeat="detail in mainData |filter:stockFilter">
+							<div class="stock-properties">
+								<div class="detail-prop" ng-class-odd="'odd'">{{detail}}</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+
+			</div>
+		</div> <!--Closes Row-->
+	</div>
+	
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/angularRoutes.js"></script>
+	<script type="text/javascript" src="js/controller.js"></script>
+</body>
+</html>
