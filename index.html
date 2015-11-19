@@ -27,31 +27,10 @@
 
 				</div>
 			</div>
-			<div id="right-single-stock" class="text-center col-md-6">
-				<div class="filter-input">
-					<div id="stock-filter">
-						<span>Filter:</span><input type="text" ng-model="stockFilter">
-						<!-- Have angular create one div for each property in this stock -->
-					</div>
-					<div class="stock-filters row">
-						<div class="stock-filters-wrapper col-md-3">
-							<span >Symbol:</span>
-							<span>Bid:</span>
-							<span >Ask:</span>
-							<span>Change:</span>
-							<span >ADV:</span>
-							<span>Day Low:</span>
-							<span >Day High:</span>
-						</div>
+			<div id="right-single-stock" class="text-center col-md-6" ng-view >
+				
 					
-						<div class="col-md-6" id="" ng-repeat="detail in mainData |filter:stockFilter">
-							<div class="stock-properties">
-								<div class="detail-prop" ng-class-odd="'odd'">{{detail}}</div>
-								
-							</div>
-						</div>
-					</div>
-				</div>
+				
 			</div>
 			<div class="col-md-3">
 

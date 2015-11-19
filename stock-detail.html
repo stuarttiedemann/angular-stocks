@@ -1,0 +1,32 @@
+<div class="container">
+		<button class="btn btn-success" ng-click="detailsFunction()">Show Details</button>
+		<button class="btn btn-primary" ng-click="stockSummary()">Back to Summary</button>
+		<h1>Stock Details</h1>
+	<div class="stock-filters row">
+			<div class="stock-filters-wrapper col-md-3">
+				<span >% Change Realtime :</span>
+				<span>Bid Realtime:</span>
+				<span >Ask Realtime:</span>
+				<span>Change Realtime:</span>
+				<span >Day Low:</span>
+				<span>Day High:</span>
+				<span >Day Range Realtime:</span>
+				<span >Year Low:</span>
+				<span >Year High:</span>
+				<span >Volume:</span>
+				<span >Average Daily Volume:</span>
+				<span >200 Day MA:</span>
+				<span >Distance from 200 Day in %:</span>
+				<span >Price to Book:</span>
+				<span >PE Ratio:</span>
+				<span >Dividend Per Share:</span>
+				<span >Dividend Yield:</span>
+				<span >Short Ratio:</span>
+			</div>
+						
+			<div class="col-md-6" id="" ng-repeat="details in detailsList track by $index">
+			<div class="stock-properties">
+				<div class="detail-prop" ng-class-odd="'odd'">{{details.val}}</div>						
+			</div>
+	</div>
+</div>

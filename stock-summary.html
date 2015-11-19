@@ -1,0 +1,24 @@
+<div class="filter-input">
+	<div id="stock-filter">
+		<span>Filter:</span><input type="text" ng-model="stockFilter">
+		<!-- Have angular create one div for each property in this stock -->
+		<button ng-click="detailsPage()" class="btn btn-primary">More Info</button>
+		</div>
+		<div class="stock-filters row">
+			<div class="stock-filters-wrapper col-md-3">
+				<span >Symbol:</span>
+				<span>Bid:</span>
+				<span >Ask:</span>
+				<span>Change:</span>
+				<span >ADV:</span>
+				<span>Day Low:</span>
+				<span >Day High:</span>
+			</div>
+						
+			<div class="col-md-6" id="" ng-repeat="detail in mainData track by $index">
+			<div class="stock-properties">
+				<div class="detail-prop" ng-class-odd="'odd'">{{detail}}</div>						
+			</div>
+		</div>
+	</div>
+</div>
